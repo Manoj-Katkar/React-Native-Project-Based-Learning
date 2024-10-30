@@ -1,0 +1,73 @@
+# Step 1: Install Required Software
+
+# 1.1 Install Node.js
+# Download and install Node.js from https://nodejs.org.
+# Ensure npm (Node Package Manager) is installed as well.
+# Verify installation:
+node -v     # Displays Node.js version
+npm -v      # Displays npm version
+
+# 1.2 Install Java Development Kit (JDK)
+# Download JDK from Oracle: https://www.oracle.com/java/technologies/javase-jdk11-downloads.html
+# Set JAVA_HOME environment variable:
+# - Right-click on "This PC" > Properties > Advanced system settings > Environment Variables
+# - Add a new system variable:
+#    Variable name: JAVA_HOME
+#    Variable value: Path to your JDK (e.g., C:\Program Files\Java\jdk-<version>)
+# Add JDK bin to the system PATH:
+# - Edit the "Path" variable and add: %JAVA_HOME%\bin
+
+# 1.3 Install Android Studio
+# Download and install Android Studio: https://developer.android.com/studio
+# During installation, make sure to install the Android SDK, Android SDK Platform-Tools, and Android Emulator.
+# Launch Android Studio and open SDK Manager:
+# - Install the latest Android SDK (e.g., Android 12, API 31 or higher)
+# - Install the Android SDK Tools and Android Emulator.
+
+# Step 2: Set Up the Android Emulator
+
+# 2.1 Open Android Studio
+# Go to Tools > AVD Manager
+# Create a new Virtual Device (e.g., Pixel 3)
+# Select a system image (e.g., Android 12, API 31)
+# Click "Finish" to create the emulator.
+
+# 2.2 Start the Android Emulator
+# In AVD Manager, click the play button next to the created emulator to start it.
+
+# Step 3: Install React Native CLI and Create a New App
+
+# 3.1 Install React Native CLI globally (optional):
+npm install -g react-native-cli  # Installs React Native CLI
+
+# 3.2 Create a new React Native app:
+npx @react-native-community/cli init "MyNewApp" 
+   # Replace "MyNewApp" with your app name
+#3.3 go to the project directory and create the local.properties file under the android 
+C:\Users\Admin\Desktop\React-Native-Project-learning\ProjectName\android
+
+local.properties = sdk.dir=C:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk
+
+
+# Step 4: Run the React Native App on Android Emulator
+
+# 4.1 Start Metro Bundler (the development server for React Native): (used to run the app in the browser )
+npx react-native start
+
+# 4.2 Open a new terminal window and run the app on the Android emulator:
+npx react-native run-android
+
+shortcut to create the react native component : rnfe
+
+to setup the talwind : https://youtu.be/iTALto31-Gs?si=lteTNb6spj1n0bkA
+
+# Step 5: Troubleshooting
+
+# If the app doesn't run, ensure:
+# - Android Studio and SDK are properly set up
+# - AVD (Android Virtual Device) is running
+# - SDK path is correctly set in local.properties (or as ANDROID_HOME in environment variables):
+#    sdk.dir=C:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk
+
+# Run this command to check for common setup issues:
+npx react-native doctor
